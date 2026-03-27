@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Hotak-Script/Hotak-Script/master/images/profile.jpeg" width="180" alt="Hotak" />
+  <img src="https://raw.githubusercontent.com/Hotak-Script/Hotak-Script/master/images/profile.jpeg" width="300" alt="Hotak" />
 </p>
 
 <h1 align="center">Hi, I'm Hotak 👋</h1>
