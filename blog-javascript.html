@@ -1,0 +1,564 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 JavaScript Tricks & Snippets | Hotak Script</title>
+<meta name="description" content="50 practical JavaScript hacks and code snippets.">
+<link rel="stylesheet" href="assets/css/index.css">
+<link rel="stylesheet" href="assets/css/blog-post.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="bg-decoration bg-one" aria-hidden="true">
+</div>
+<div class="bg-decoration bg-two" aria-hidden="true">
+</div>
+<div class="bg-grid" aria-hidden="true">
+</div>
+<header class="site-header">
+<div class="container topbar">
+<a class="brand" href="index.html">
+<span class="brand-badge">&lt;HS/&gt;</span>
+<span class="brand-name">Hotak Script</span>
+</a>
+<nav class="navigation" id="navMenu">
+<ul>
+<li>
+<a href="index.html">Home</a>
+</li>
+<li>
+<a href="courses.html">Courses</a>
+</li>
+<li>
+<a href="tutorials.html">Tutorials</a>
+</li>
+<li>
+<a class="active" href="blogs.html">Blogs</a>
+</li>
+<li>
+<a href="videos.html">Videos</a>
+</li>
+<li>
+<a href="sourcecode.html">Source Code</a>
+</li>
+</ul>
+</nav>
+<button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</button>
+</div>
+</header>
+<main class="section-pad">
+<section class="container inner-hero reveal">
+<h1>50 JavaScript Tricks & Snippets</h1>
+<p>50 JavaScript tricks for real-world frontend behavior and debugging.</p>
+<div class="pill-row">
+<span class="pill">50 Practical Hacks</span>
+<span class="pill">Copy & Use</span>
+<span class="pill">Hotak Script</span>
+</div>
+</section>
+<section class="container section-pad article-list">
+<div class="article-card reveal">
+  <h2>Hack 1: Safe query selector</h2>
+  <pre>
+<code>const el = document.querySelector(".target");
+
+if (!el) {
+    return;
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 2: Debounce input</h2>
+  <pre>
+<code>const debounce = (fn, d = 250) =&gt; {
+    let timer;
+
+    return (...args) =&gt; {
+        clearTimeout(timer);
+        timer = setTimeout(() =&gt; fn(...args), d);
+    };
+};</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 3: Copy to clipboard</h2>
+  <pre>
+<code>async function copyText() {
+    await navigator.clipboard.writeText("Copied text");
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 4: Array unique values</h2>
+  <pre>
+<code>const unique = [
+    ...new Set(arr)
+];</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 5: Optional chaining</h2>
+  <pre>
+<code>const city =
+    user?.address?.city ?? "N/A";</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 6: Fetch with error check</h2>
+  <pre>
+<code>const response = await fetch(url);
+
+if (!response.ok) {
+    throw new Error("Request failed");
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 7: Format number</h2>
+  <pre>
+<code>const formattedNumber =
+    num.toLocaleString();</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 8: Map object entries</h2>
+  <pre>
+<code>const pairs = Object.entries(obj).map(
+    ([key, value]) =&gt; `${key}:${value}`
+);</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 9: Event delegation</h2>
+  <pre>
+<code>list.addEventListener("click", (event) =&gt; {
+    if (event.target.matches(".item")) {
+        handle();
+    }
+});</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 10: Toggle class helper</h2>
+  <pre>
+<code>btn.addEventListener("click", () =&gt; {
+    card.classList.toggle("active");
+});</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 11: Safe query selector</h2>
+  <pre>
+<code>const el = document.querySelector(".target");
+
+if (!el) {
+    return;
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 12: Debounce input</h2>
+  <pre>
+<code>const debounce = (fn, d = 250) =&gt; {
+    let timer;
+
+    return (...args) =&gt; {
+        clearTimeout(timer);
+        timer = setTimeout(() =&gt; fn(...args), d);
+    };
+};</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 13: Copy to clipboard</h2>
+  <pre>
+<code>async function copyText() {
+    await navigator.clipboard.writeText("Copied text");
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 14: Array unique values</h2>
+  <pre>
+<code>const unique = [
+    ...new Set(arr)
+];</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 15: Optional chaining</h2>
+  <pre>
+<code>const city =
+    user?.address?.city ?? "N/A";</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 16: Fetch with error check</h2>
+  <pre>
+<code>const response = await fetch(url);
+
+if (!response.ok) {
+    throw new Error("Request failed");
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 17: Format number</h2>
+  <pre>
+<code>const formattedNumber =
+    num.toLocaleString();</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 18: Map object entries</h2>
+  <pre>
+<code>const pairs = Object.entries(obj).map(
+    ([key, value]) =&gt; `${key}:${value}`
+);</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 19: Event delegation</h2>
+  <pre>
+<code>list.addEventListener("click", (event) =&gt; {
+    if (event.target.matches(".item")) {
+        handle();
+    }
+});</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 20: Toggle class helper</h2>
+  <pre>
+<code>btn.addEventListener("click", () =&gt; {
+    card.classList.toggle("active");
+});</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 21: Safe query selector</h2>
+  <pre>
+<code>const el = document.querySelector(".target");
+
+if (!el) {
+    return;
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 22: Debounce input</h2>
+  <pre>
+<code>const debounce = (fn, d = 250) =&gt; {
+    let timer;
+
+    return (...args) =&gt; {
+        clearTimeout(timer);
+        timer = setTimeout(() =&gt; fn(...args), d);
+    };
+};</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 23: Copy to clipboard</h2>
+  <pre>
+<code>async function copyText() {
+    await navigator.clipboard.writeText("Copied text");
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 24: Array unique values</h2>
+  <pre>
+<code>const unique = [
+    ...new Set(arr)
+];</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 25: Optional chaining</h2>
+  <pre>
+<code>const city =
+    user?.address?.city ?? "N/A";</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 26: Fetch with error check</h2>
+  <pre>
+<code>const response = await fetch(url);
+
+if (!response.ok) {
+    throw new Error("Request failed");
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 27: Format number</h2>
+  <pre>
+<code>const formattedNumber =
+    num.toLocaleString();</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 28: Map object entries</h2>
+  <pre>
+<code>const pairs = Object.entries(obj).map(
+    ([key, value]) =&gt; `${key}:${value}`
+);</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 29: Event delegation</h2>
+  <pre>
+<code>list.addEventListener("click", (event) =&gt; {
+    if (event.target.matches(".item")) {
+        handle();
+    }
+});</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 30: Toggle class helper</h2>
+  <pre>
+<code>btn.addEventListener("click", () =&gt; {
+    card.classList.toggle("active");
+});</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 31: Safe query selector</h2>
+  <pre>
+<code>const el = document.querySelector(".target");
+
+if (!el) {
+    return;
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 32: Debounce input</h2>
+  <pre>
+<code>const debounce = (fn, d = 250) =&gt; {
+    let timer;
+
+    return (...args) =&gt; {
+        clearTimeout(timer);
+        timer = setTimeout(() =&gt; fn(...args), d);
+    };
+};</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 33: Copy to clipboard</h2>
+  <pre>
+<code>async function copyText() {
+    await navigator.clipboard.writeText("Copied text");
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 34: Array unique values</h2>
+  <pre>
+<code>const unique = [
+    ...new Set(arr)
+];</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 35: Optional chaining</h2>
+  <pre>
+<code>const city =
+    user?.address?.city ?? "N/A";</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 36: Fetch with error check</h2>
+  <pre>
+<code>const response = await fetch(url);
+
+if (!response.ok) {
+    throw new Error("Request failed");
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 37: Format number</h2>
+  <pre>
+<code>const formattedNumber =
+    num.toLocaleString();</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 38: Map object entries</h2>
+  <pre>
+<code>const pairs = Object.entries(obj).map(
+    ([key, value]) =&gt; `${key}:${value}`
+);</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 39: Event delegation</h2>
+  <pre>
+<code>list.addEventListener("click", (event) =&gt; {
+    if (event.target.matches(".item")) {
+        handle();
+    }
+});</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 40: Toggle class helper</h2>
+  <pre>
+<code>btn.addEventListener("click", () =&gt; {
+    card.classList.toggle("active");
+});</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 41: Safe query selector</h2>
+  <pre>
+<code>const el = document.querySelector(".target");
+
+if (!el) {
+    return;
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 42: Debounce input</h2>
+  <pre>
+<code>const debounce = (fn, d = 250) =&gt; {
+    let timer;
+
+    return (...args) =&gt; {
+        clearTimeout(timer);
+        timer = setTimeout(() =&gt; fn(...args), d);
+    };
+};</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 43: Copy to clipboard</h2>
+  <pre>
+<code>async function copyText() {
+    await navigator.clipboard.writeText("Copied text");
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 44: Array unique values</h2>
+  <pre>
+<code>const unique = [
+    ...new Set(arr)
+];</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 45: Optional chaining</h2>
+  <pre>
+<code>const city =
+    user?.address?.city ?? "N/A";</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 46: Fetch with error check</h2>
+  <pre>
+<code>const response = await fetch(url);
+
+if (!response.ok) {
+    throw new Error("Request failed");
+}</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 47: Format number</h2>
+  <pre>
+<code>const formattedNumber =
+    num.toLocaleString();</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 48: Map object entries</h2>
+  <pre>
+<code>const pairs = Object.entries(obj).map(
+    ([key, value]) =&gt; `${key}:${value}`
+);</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 49: Event delegation</h2>
+  <pre>
+<code>list.addEventListener("click", (event) =&gt; {
+    if (event.target.matches(".item")) {
+        handle();
+    }
+});</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 50: Toggle class helper</h2>
+  <pre>
+<code>btn.addEventListener("click", () =&gt; {
+    card.classList.toggle("active");
+});</code>
+</pre>
+</div>
+</section>
+</main>
+<footer>
+<div class="container footer-wrap">
+<div>
+<a class="brand footer-brand" href="index.html">
+<span class="brand-badge">&lt;HS/&gt;</span>
+<span class="brand-name">Hotak Script</span>
+</a>
+<p class="footer-note">Practical coding education designed for fast growth and real outcomes.</p>
+</div>
+<div class="footer-links">
+<h5>Main</h5>
+<a href="index.html">Home</a>
+<a href="courses.html">Courses</a>
+<a href="tutorials.html">Tutorials</a>
+</div>
+<div class="footer-links">
+<h5>Resources</h5>
+<a href="blogs.html">Blogs</a>
+<a href="videos.html">Videos</a>
+<a href="sourcecode.html">Source Code</a>
+</div>
+<div class="footer-links">
+<h5>Social</h5>
+<a href="https://www.youtube.com/@Hotak-Script" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-youtube">
+</i> YouTube</a>
+<a href="https://www.facebook.com/share/184jUq7SFJ/" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-facebook">
+</i> Facebook</a>
+<a href="https://t.me/Hotak_Script" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-telegram">
+</i> Telegram</a>
+</div>
+</div>
+<div class="container lower">
+<p class="copy">&copy; <span id="yearNow">2026</span> Hotak Script. All rights reserved.</p>
+</div>
+</footer>
+<script src="assets/js/index.js">
+</script>
+<script src="assets/js/page.js">
+</script>
+</body>
+</html>
+
+
+

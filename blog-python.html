@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 Python Tricks & Snippets | Hotak Script</title>
+<meta name="description" content="50 practical Python hacks and code snippets.">
+<link rel="stylesheet" href="assets/css/index.css">
+<link rel="stylesheet" href="assets/css/blog-post.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="bg-decoration bg-one" aria-hidden="true">
+</div>
+<div class="bg-decoration bg-two" aria-hidden="true">
+</div>
+<div class="bg-grid" aria-hidden="true">
+</div>
+<header class="site-header">
+<div class="container topbar">
+<a class="brand" href="index.html">
+<span class="brand-badge">&lt;HS/&gt;</span>
+<span class="brand-name">Hotak Script</span>
+</a>
+<nav class="navigation" id="navMenu">
+<ul>
+<li>
+<a href="index.html">Home</a>
+</li>
+<li>
+<a href="courses.html">Courses</a>
+</li>
+<li>
+<a href="tutorials.html">Tutorials</a>
+</li>
+<li>
+<a class="active" href="blogs.html">Blogs</a>
+</li>
+<li>
+<a href="videos.html">Videos</a>
+</li>
+<li>
+<a href="sourcecode.html">Source Code</a>
+</li>
+</ul>
+</nav>
+<button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</button>
+</div>
+</header>
+<main class="section-pad">
+<section class="container inner-hero reveal">
+<h1>50 Python Tricks & Snippets</h1>
+<p>50 Python tips for scripting, clean code, and faster daily workflows.</p>
+<div class="pill-row">
+<span class="pill">50 Practical Hacks</span>
+<span class="pill">Copy & Use</span>
+<span class="pill">Hotak Script</span>
+</div>
+</section>
+<section class="container section-pad article-list">
+<div class="article-card reveal">
+  <h2>Hack 1: List comprehension</h2>
+  <pre>
+<code>squares = [
+    x * x
+    for x in range(10)
+]</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 2: Dictionary get fallback</h2>
+  <pre>
+<code>value = data.get(
+    "name",
+    "Unknown"
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 3: Enumerate loops</h2>
+  <pre>
+<code>for i, item in enumerate(items, start=1):
+    print(i, item)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 4: Zip multiple lists</h2>
+  <pre>
+<code>for a, b in zip(names, scores):
+    print(a, b)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 5: With file context</h2>
+  <pre>
+<code>with open("notes.txt", "w", encoding="utf-8") as f:
+    f.write("hello")</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 6: Try/except guard</h2>
+  <pre>
+<code>try:
+    result = 10 / n
+except ZeroDivisionError:
+    result = 0</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 7: F-string formatting</h2>
+  <pre>
+<code>print(
+    f"User: {name} | Score: {score}"
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 8: Set for uniqueness</h2>
+  <pre>
+<code>unique_tags = set(
+    tags
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 9: Pathlib usage</h2>
+  <pre>
+<code>from pathlib import Path
+Path("logs").mkdir(exist_ok=True)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 10: Main entry point</h2>
+  <pre>
+<code>if __name__ == "__main__":
+    run()</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 11: List comprehension</h2>
+  <pre>
+<code>squares = [
+    x * x
+    for x in range(10)
+]</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 12: Dictionary get fallback</h2>
+  <pre>
+<code>value = data.get(
+    "name",
+    "Unknown"
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 13: Enumerate loops</h2>
+  <pre>
+<code>for i, item in enumerate(items, start=1):
+    print(i, item)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 14: Zip multiple lists</h2>
+  <pre>
+<code>for a, b in zip(names, scores):
+    print(a, b)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 15: With file context</h2>
+  <pre>
+<code>with open("notes.txt", "w", encoding="utf-8") as f:
+    f.write("hello")</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 16: Try/except guard</h2>
+  <pre>
+<code>try:
+    result = 10 / n
+except ZeroDivisionError:
+    result = 0</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 17: F-string formatting</h2>
+  <pre>
+<code>print(
+    f"User: {name} | Score: {score}"
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 18: Set for uniqueness</h2>
+  <pre>
+<code>unique_tags = set(
+    tags
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 19: Pathlib usage</h2>
+  <pre>
+<code>from pathlib import Path
+Path("logs").mkdir(exist_ok=True)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 20: Main entry point</h2>
+  <pre>
+<code>if __name__ == "__main__":
+    run()</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 21: List comprehension</h2>
+  <pre>
+<code>squares = [
+    x * x
+    for x in range(10)
+]</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 22: Dictionary get fallback</h2>
+  <pre>
+<code>value = data.get(
+    "name",
+    "Unknown"
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 23: Enumerate loops</h2>
+  <pre>
+<code>for i, item in enumerate(items, start=1):
+    print(i, item)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 24: Zip multiple lists</h2>
+  <pre>
+<code>for a, b in zip(names, scores):
+    print(a, b)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 25: With file context</h2>
+  <pre>
+<code>with open("notes.txt", "w", encoding="utf-8") as f:
+    f.write("hello")</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 26: Try/except guard</h2>
+  <pre>
+<code>try:
+    result = 10 / n
+except ZeroDivisionError:
+    result = 0</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 27: F-string formatting</h2>
+  <pre>
+<code>print(
+    f"User: {name} | Score: {score}"
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 28: Set for uniqueness</h2>
+  <pre>
+<code>unique_tags = set(
+    tags
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 29: Pathlib usage</h2>
+  <pre>
+<code>from pathlib import Path
+Path("logs").mkdir(exist_ok=True)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 30: Main entry point</h2>
+  <pre>
+<code>if __name__ == "__main__":
+    run()</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 31: List comprehension</h2>
+  <pre>
+<code>squares = [
+    x * x
+    for x in range(10)
+]</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 32: Dictionary get fallback</h2>
+  <pre>
+<code>value = data.get(
+    "name",
+    "Unknown"
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 33: Enumerate loops</h2>
+  <pre>
+<code>for i, item in enumerate(items, start=1):
+    print(i, item)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 34: Zip multiple lists</h2>
+  <pre>
+<code>for a, b in zip(names, scores):
+    print(a, b)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 35: With file context</h2>
+  <pre>
+<code>with open("notes.txt", "w", encoding="utf-8") as f:
+    f.write("hello")</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 36: Try/except guard</h2>
+  <pre>
+<code>try:
+    result = 10 / n
+except ZeroDivisionError:
+    result = 0</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 37: F-string formatting</h2>
+  <pre>
+<code>print(
+    f"User: {name} | Score: {score}"
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 38: Set for uniqueness</h2>
+  <pre>
+<code>unique_tags = set(
+    tags
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 39: Pathlib usage</h2>
+  <pre>
+<code>from pathlib import Path
+Path("logs").mkdir(exist_ok=True)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 40: Main entry point</h2>
+  <pre>
+<code>if __name__ == "__main__":
+    run()</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 41: List comprehension</h2>
+  <pre>
+<code>squares = [
+    x * x
+    for x in range(10)
+]</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 42: Dictionary get fallback</h2>
+  <pre>
+<code>value = data.get(
+    "name",
+    "Unknown"
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 43: Enumerate loops</h2>
+  <pre>
+<code>for i, item in enumerate(items, start=1):
+    print(i, item)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 44: Zip multiple lists</h2>
+  <pre>
+<code>for a, b in zip(names, scores):
+    print(a, b)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 45: With file context</h2>
+  <pre>
+<code>with open("notes.txt", "w", encoding="utf-8") as f:
+    f.write("hello")</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 46: Try/except guard</h2>
+  <pre>
+<code>try:
+    result = 10 / n
+except ZeroDivisionError:
+    result = 0</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 47: F-string formatting</h2>
+  <pre>
+<code>print(
+    f"User: {name} | Score: {score}"
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 48: Set for uniqueness</h2>
+  <pre>
+<code>unique_tags = set(
+    tags
+)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 49: Pathlib usage</h2>
+  <pre>
+<code>from pathlib import Path
+Path("logs").mkdir(exist_ok=True)</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 50: Main entry point</h2>
+  <pre>
+<code>if __name__ == "__main__":
+    run()</code>
+</pre>
+</div>
+</section>
+</main>
+<footer>
+<div class="container footer-wrap">
+<div>
+<a class="brand footer-brand" href="index.html">
+<span class="brand-badge">&lt;HS/&gt;</span>
+<span class="brand-name">Hotak Script</span>
+</a>
+<p class="footer-note">Practical coding education designed for fast growth and real outcomes.</p>
+</div>
+<div class="footer-links">
+<h5>Main</h5>
+<a href="index.html">Home</a>
+<a href="courses.html">Courses</a>
+<a href="tutorials.html">Tutorials</a>
+</div>
+<div class="footer-links">
+<h5>Resources</h5>
+<a href="blogs.html">Blogs</a>
+<a href="videos.html">Videos</a>
+<a href="sourcecode.html">Source Code</a>
+</div>
+<div class="footer-links">
+<h5>Social</h5>
+<a href="https://www.youtube.com/@Hotak-Script" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-youtube">
+</i> YouTube</a>
+<a href="https://www.facebook.com/share/184jUq7SFJ/" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-facebook">
+</i> Facebook</a>
+<a href="https://t.me/Hotak_Script" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-telegram">
+</i> Telegram</a>
+</div>
+</div>
+<div class="container lower">
+<p class="copy">&copy; <span id="yearNow">2026</span> Hotak Script. All rights reserved.</p>
+</div>
+</footer>
+<script src="assets/js/index.js">
+</script>
+<script src="assets/js/page.js">
+</script>
+</body>
+</html>
+
+
+

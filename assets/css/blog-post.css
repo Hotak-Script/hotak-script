@@ -1,0 +1,124 @@
+:root {
+  --page-accent: #ff7a59;
+  --page-accent-soft: #ffb08f;
+}
+
+.inner-hero {
+  border-color: var(--page-accent);
+  background: linear-gradient(120deg, rgba(255, 122, 89, 0.14), rgba(255, 176, 143, 0.08));
+}
+
+.inner-hero h1 {
+  color: #ffd9cb;
+}
+
+:root[data-theme="light"] .inner-hero h1 {
+  color: #84361f;
+}
+
+.article-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.article-card {
+  border: 1px solid var(--line);
+  border-radius: 0.95rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.article-card h2 {
+  font-family: "Sora", sans-serif;
+  margin-bottom: 0.55rem;
+  color: var(--text-main);
+}
+
+.article-card p {
+  color: var(--text-soft);
+  line-height: 1.68;
+  margin-bottom: 0.55rem;
+}
+
+.article-card pre {
+  margin-top: 0.55rem;
+  background: #060b1a;
+  border: 1px solid rgba(177, 201, 237, 0.22);
+  border-radius: 0.7rem;
+  padding: 0;
+  overflow-x: auto;
+}
+
+:root[data-theme="light"] .article-card pre {
+  background: #f3f8ff;
+  border-color: rgba(31, 70, 120, 0.25);
+}
+
+.article-card code {
+  color: #e8f0ff;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: block;
+  white-space: pre-wrap;
+  tab-size: 4;
+  padding: 0.9rem;
+}
+
+:root[data-theme="light"] .article-card code {
+  color: #1a2f4d;
+}
+
+.code-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid rgba(177, 201, 237, 0.18);
+  background: linear-gradient(90deg, rgba(78, 168, 255, 0.12), rgba(116, 192, 255, 0.04));
+}
+
+.code-lang {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(145, 193, 255, 0.45);
+  color: #cde6ff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.code-copy {
+  background: transparent;
+  color: #d7ebff;
+  border: 1px solid rgba(145, 193, 255, 0.34);
+  border-radius: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+}
+
+:root[data-theme="light"] .code-lang {
+  color: #245081;
+  border-color: rgba(31, 70, 120, 0.38);
+}
+
+:root[data-theme="light"] .code-copy {
+  color: #245081;
+  border-color: rgba(31, 70, 120, 0.35);
+}
+
+.code-copy:hover {
+  border-color: rgba(145, 193, 255, 0.65);
+  color: #ffffff;
+}
+
+:root[data-theme="light"] .code-copy:hover {
+  color: #0f2742;
+  border-color: rgba(31, 70, 120, 0.65);
+}

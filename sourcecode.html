@@ -3,120 +3,248 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Source | Hotak Script</title>
-
-<!-- CSS -->
- <link rel="stylesheet" href="assets/css/index.css">
+<title>Source Code | Hotak Script</title>
+<meta name="description" content="Copy and download source code snippets from Hotak Script videos.">
+<link rel="stylesheet" href="assets/css/index.css">
 <link rel="stylesheet" href="assets/css/sourcecode.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body>
+<div class="bg-decoration bg-one" aria-hidden="true"></div>
+<div class="bg-decoration bg-two" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
 
-<!-- Header -->
-<header>
-    <div class="compLogo">
-        <div class="logo">
-            <svg viewBox="0 0 200 160">
-                <rect width="200" height="160" rx="30" fill="black"/>
-                <text x="20" y="105" font-size="90" fill="#38bdf8" font-family="monospace">&lt;</text>
-                <text x="65" y="105" font-size="70" fill="white" font-family="monospace" font-weight="bold">HS</text>
-                <text x="135" y="105" font-size="90" fill="#38bdf8" font-family="monospace">&gt;</text>
-            </svg>
-        </div>
-        <p class="logoName">Hotak Script</p>
-    </div>
-
-    <nav class="navigation">
-        <ul>
-            <li><a href="index.html"><i class="fa-solid fa-house icon"></i><span class="text">Home</span></a></li>
-            <li><a href="courses.html"><i class="fa-solid fa-graduation-cap icon"></i><span class="text">Courses</span></a></li>
-            <li><a href="tutorials.html"><i class="fa-solid fa-book icon"></i><span class="text">Tutorials</span></a></li>
-            <li><a href="blogs.html"><i class="fa-solid fa-blog icon"></i><span class="text">Blogs</span></a></li>
-            <li><a href="videos.html"><i class="fa-solid fa-video icon"></i><span class="text">Videos</span></a></li>
-            <li class="active"><a href="sourcecode.html"><i class="fa-solid fa-code icon"></i><span class="text">Source</span></a></li>
-            <div class="indicator"></div>
-        </ul>
+<header class="site-header">
+  <div class="container topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-badge">&lt;HS/&gt;</span>
+      <span class="brand-name">Hotak Script</span>
+    </a>
+    <nav class="navigation" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="tutorials.html">Tutorials</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a class="active" href="sourcecode.html">Source Code</a></li>
+      </ul>
     </nav>
-
-    <!-- Hamburger -->
-    <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
-<!-- Hero Section -->
-<section class="sourceHero">
-  <h1> Source Code </h1>
-  <p>
-    Explore all the Source Code we have for HTML, CSS, JavaScript, Python, and more. Learn step by step with examples and projects.
-  </p>
-  <br><br>
-  <h2>Coming Soon...</h2>
-</section>
+<main class="section-pad">
+  <section class="container inner-hero reveal">
+    <h1>Video Source Code Library</h1>
+    <p>Aap yahan har video ka code paste kar sakte ho. Users search karein, tab switch karein, copy karein, TXT download karein ya ZIP lein.</p>
+    <div class="pill-row">
+      <span class="pill">Search</span>
+      <span class="pill">Tabs (HTML/CSS/JS)</span>
+      <span class="pill">Copy + TXT + ZIP</span>
+    </div>
+  </section>
 
-<!-- Tutorials Cards Section -->
-<section class="sourceGrid">
-  <div class="section courseCard">
-    <img src="/images/html.jpeg" alt="HTML Tutorial">
-    <h2>HTML Basics</h2>
-    <p>Learn HTML structure, tags, and building your first web page.</p>
-  </div>
-  
-  <div class="section courseCard">
-    <img src="/images/css.jpeg" alt="CSS Tutorial">
-    <h2>CSS Styling</h2>
-    <p>Master CSS for styling websites with layouts, colors, and animations.</p>
-  </div>
-</section>
+  <section class="container section-pad">
+    <div class="source-tools reveal">
+      <label for="sourceSearch">Find source code by video name:</label>
+      <input id="sourceSearch" type="search" placeholder="Search e.g. html day 1, particle, python">
+      <p id="searchMeta" class="search-meta">Showing all source cards.</p>
+    </div>
 
-<!-- Footer -->
+    <div id="sourceList" class="source-list">
+      <article class="source-item reveal" data-search="html day 1 tutorial intro heading paragraph break hr">
+        <div class="source-head">
+          <img src="https://i.ytimg.com/vi/3vxHOiVSHVc/hqdefault.jpg" alt="Day 1 HTML Tutorial thumbnail">
+          <div class="source-meta">
+            <h3>Day 1 HTML Tutorial</h3>
+            <p>Video: Intro, headings, paragraph, break and hr tags.</p>
+            <a href="https://www.youtube.com/watch?v=3vxHOiVSHVc" target="_blank" rel="noopener noreferrer">Watch on YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <div class="code-controls">
+          <div class="tab-row">
+            <button class="code-tab active" data-tab-target="html">HTML</button>
+            <button class="code-tab" data-tab-target="css">CSS</button>
+            <button class="code-tab" data-tab-target="js">JS</button>
+          </div>
+          <div class="action-row">
+            <button class="copy-btn"><i class="fa-regular fa-copy"></i> Copy Current</button>
+            <button class="download-txt"><i class="fa-solid fa-file-arrow-down"></i> Download TXT</button>
+            <button class="download-zip"><i class="fa-solid fa-file-zipper"></i> Download ZIP</button>
+          </div>
+        </div>
+
+        <div class="panel-wrap">
+          <pre class="code-panel active" data-tab="html" data-filename="index.html"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  &lt;title&gt;Day 1 Demo&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello Hotak Script&lt;/h1&gt;
+  &lt;p&gt;Replace this with your real video code.&lt;/p&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          <pre class="code-panel" data-tab="css" data-filename="style.css"><code>body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d1325;
+  color: #e7f0ff;
+}
+
+h1 {
+  color: #8bc5ff;
+}</code></pre>
+          <pre class="code-panel" data-tab="js" data-filename="script.js"><code>const heading = document.querySelector("h1");
+if (heading) {
+  heading.textContent = "Hotak Script Day 1";
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="source-item reveal" data-search="css day 1 selectors syntax style beginner">
+        <div class="source-head">
+          <img src="https://i.ytimg.com/vi/kysjAgwF0ko/hqdefault.jpg" alt="Day 1 CSS Tutorial thumbnail">
+          <div class="source-meta">
+            <h3>Day 1 CSS Tutorial</h3>
+            <p>Video: CSS intro, syntax and selectors basics.</p>
+            <a href="https://www.youtube.com/watch?v=kysjAgwF0ko" target="_blank" rel="noopener noreferrer">Watch on YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <div class="code-controls">
+          <div class="tab-row">
+            <button class="code-tab active" data-tab-target="html">HTML</button>
+            <button class="code-tab" data-tab-target="css">CSS</button>
+            <button class="code-tab" data-tab-target="js">JS</button>
+          </div>
+          <div class="action-row">
+            <button class="copy-btn"><i class="fa-regular fa-copy"></i> Copy Current</button>
+            <button class="download-txt"><i class="fa-solid fa-file-arrow-down"></i> Download TXT</button>
+            <button class="download-zip"><i class="fa-solid fa-file-zipper"></i> Download ZIP</button>
+          </div>
+        </div>
+
+        <div class="panel-wrap">
+          <pre class="code-panel active" data-tab="html" data-filename="index.html"><code>&lt;div class="card"&gt;
+  &lt;h2&gt;CSS Practice Card&lt;/h2&gt;
+  &lt;p&gt;Paste full markup from your video.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+          <pre class="code-panel" data-tab="css" data-filename="style.css"><code>.card {
+  width: 320px;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #52b6ff;
+  background: rgba(82, 182, 255, 0.08);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
+}</code></pre>
+          <pre class="code-panel" data-tab="js" data-filename="script.js"><code>// Optional JS (if video includes)
+console.log("CSS tutorial demo loaded");</code></pre>
+        </div>
+      </article>
+
+      <article class="source-item reveal" data-search="javascript particle effect image canvas hotak script">
+        <div class="source-head">
+          <img src="https://i.ytimg.com/vi/KwsaB8lXbMs/hqdefault.jpg" alt="JavaScript Particle Effect thumbnail">
+          <div class="source-meta">
+            <h3>JavaScript Particle Effect</h3>
+            <p>Video: image to particles effect with JavaScript.</p>
+            <a href="https://www.youtube.com/watch?v=KwsaB8lXbMs" target="_blank" rel="noopener noreferrer">Watch on YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <div class="code-controls">
+          <div class="tab-row">
+            <button class="code-tab active" data-tab-target="html">HTML</button>
+            <button class="code-tab" data-tab-target="css">CSS</button>
+            <button class="code-tab" data-tab-target="js">JS</button>
+          </div>
+          <div class="action-row">
+            <button class="copy-btn"><i class="fa-regular fa-copy"></i> Copy Current</button>
+            <button class="download-txt"><i class="fa-solid fa-file-arrow-down"></i> Download TXT</button>
+            <button class="download-zip"><i class="fa-solid fa-file-zipper"></i> Download ZIP</button>
+          </div>
+        </div>
+
+        <div class="panel-wrap">
+          <pre class="code-panel active" data-tab="html" data-filename="index.html"><code>&lt;canvas id="particleCanvas"&gt;&lt;/canvas&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+          <pre class="code-panel" data-tab="css" data-filename="style.css"><code>#particleCanvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background: #050814;
+}</code></pre>
+          <pre class="code-panel" data-tab="js" data-filename="script.js"><code>// Paste full particle effect script from video here.
+const canvas = document.getElementById("particleCanvas");
+const ctx = canvas.getContext("2d");
+console.log("Particle setup ready", !!ctx);</code></pre>
+        </div>
+      </article>
+
+      <article class="source-item reveal" data-search="python cartoon beginner otp script hotak script">
+        <div class="source-head">
+          <img src="https://i.ytimg.com/vi/rgU45DDLxKY/hqdefault.jpg" alt="Learn Python with Cartoon thumbnail">
+          <div class="source-meta">
+            <h3>Learn Python With Cartoon</h3>
+            <p>Video: quick Python basics for beginners.</p>
+            <a href="https://www.youtube.com/watch?v=rgU45DDLxKY" target="_blank" rel="noopener noreferrer">Watch on YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <div class="code-controls">
+          <div class="tab-row">
+            <button class="code-tab active" data-tab-target="python">Python</button>
+          </div>
+          <div class="action-row">
+            <button class="copy-btn"><i class="fa-regular fa-copy"></i> Copy Current</button>
+            <button class="download-txt"><i class="fa-solid fa-file-arrow-down"></i> Download TXT</button>
+            <button class="download-zip"><i class="fa-solid fa-file-zipper"></i> Download ZIP</button>
+          </div>
+        </div>
+
+        <div class="panel-wrap">
+          <pre class="code-panel active" data-tab="python" data-filename="main.py"><code># Paste complete Python video code here.
+name = "Hotak Script"
+print("Welcome", name)
+
+for i in range(1, 4):
+    print("Lesson", i)</code></pre>
+        </div>
+      </article>
+    </div>
+
+    <p id="emptyState" class="empty-state" hidden>No matching source code found.</p>
+  </section>
+</main>
+
 <footer>
-    <div class="upper">
-        <div class="social">
-            <p>Main</p>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="work-with-us.html">Work With Us</a></li>
-                <li><a href="my-gear.html">My Gear</a></li>
-            </ul>
-        </div>
-        <div class="social">
-            <p>Learn</p>
-            <ul>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="tutorials.html">Tutorials</a></li>
-                <li><a href="notes.html">Notes</a></li>
-            </ul>
-        </div>
-        <div class="social">
-            <p>Legal</p>
-            <ul>
-                <li><a href="terms.html">Terms</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
-                <li><a href="refund.html">Refund</a></li>
-            </ul>
-        </div>
-        <div class="social">
-            <p>Social</p>
-            <ul>
-                <li><a href="https://www.youtube.com/@Hotak-Script" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i>YouTube</a></li>
-                <li><a href="https://www.facebook.com/share/184jUq7SFJ/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i>Facebook</a></li>
-                <li><a href="https://wa.me/032503808250" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a></li>
-                <li><a href="https://t.me/Hotak_Script" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i>Telegram</a></li>
-                <li><a href="https://x.com/Hotak_Script" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i>Twitter</a></li>
-            </ul>
-        </div>
+  <div class="container footer-wrap">
+    <div>
+      <a class="brand footer-brand" href="index.html"><span class="brand-badge">&lt;HS/&gt;</span><span class="brand-name">Hotak Script</span></a>
+      <p class="footer-note">Practical coding education designed for fast growth and real outcomes.</p>
     </div>
-    <div class="lower">
-        <p class="copy">© 2026 Hotak Script</p>
-    </div>
+    <div class="footer-links"><h5>Main</h5><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="tutorials.html">Tutorials</a></div>
+    <div class="footer-links"><h5>Resources</h5><a href="blogs.html">Blogs</a><a href="videos.html">Videos</a><a href="sourcecode.html">Source Code</a></div>
+    <div class="footer-links"><h5>Social</h5><a href="https://www.youtube.com/@Hotak-Script" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i> YouTube</a><a href="https://www.facebook.com/share/184jUq7SFJ/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i> Facebook</a><a href="https://t.me/Hotak_Script" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i> Telegram</a></div>
+  </div>
+  <div class="container lower"><p class="copy">&copy; <span id="yearNow">2026</span> Hotak Script. All rights reserved.</p></div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha512-xXDvecyA5tA+M6nW6tMbxV9H9n1tFoZT3zh0+BTtPlqvGjufH6G+jD/adJzi10BGSAdoo6gWQK7mR6X0f2PESg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="assets/js/index.js"></script>
+<script src="assets/js/page.js"></script>
 <script src="assets/js/sourcecode.js"></script>
 </body>
 </html>

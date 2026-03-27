@@ -1,0 +1,549 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 SQL Tricks & Snippets | Hotak Script</title>
+<meta name="description" content="50 practical SQL hacks and query snippets.">
+<link rel="stylesheet" href="assets/css/index.css">
+<link rel="stylesheet" href="assets/css/blog-post.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="bg-decoration bg-one" aria-hidden="true">
+</div>
+<div class="bg-decoration bg-two" aria-hidden="true">
+</div>
+<div class="bg-grid" aria-hidden="true">
+</div>
+<header class="site-header">
+<div class="container topbar">
+<a class="brand" href="index.html">
+<span class="brand-badge">&lt;HS/&gt;</span>
+<span class="brand-name">Hotak Script</span>
+</a>
+<nav class="navigation" id="navMenu">
+<ul>
+<li>
+<a href="index.html">Home</a>
+</li>
+<li>
+<a href="courses.html">Courses</a>
+</li>
+<li>
+<a href="tutorials.html">Tutorials</a>
+</li>
+<li>
+<a class="active" href="blogs.html">Blogs</a>
+</li>
+<li>
+<a href="videos.html">Videos</a>
+</li>
+<li>
+<a href="sourcecode.html">Source Code</a>
+</li>
+</ul>
+</nav>
+<button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</button>
+</div>
+</header>
+<main class="section-pad">
+<section class="container inner-hero reveal">
+<h1>50 SQL Tricks & Snippets</h1>
+<p>50 SQL hacks for querying, joins, performance, and reliable data work.</p>
+<div class="pill-row">
+<span class="pill">50 Practical Hacks</span>
+<span class="pill">Copy & Use</span>
+<span class="pill">Hotak Script</span>
+</div>
+</section>
+<section class="container section-pad article-list">
+<div class="article-card reveal">
+  <h2>Hack 1: Select specific columns</h2>
+  <pre>
+<code>SELECT
+    id,
+    name
+FROM users;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 2: Filter with WHERE</h2>
+  <pre>
+<code>SELECT *
+FROM users
+WHERE salary &gt; 50000;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 3: Sort results</h2>
+  <pre>
+<code>SELECT *
+FROM users
+ORDER BY created_at DESC;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 4: Paginate rows</h2>
+  <pre>
+<code>SELECT *
+FROM users
+LIMIT 20 OFFSET 40;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 5: Aggregate counts</h2>
+  <pre>
+<code>SELECT
+    COUNT(*) AS total_users
+FROM users;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 6: Group and summarize</h2>
+  <pre>
+<code>SELECT
+    gender,
+    AVG(salary)
+FROM users
+GROUP BY gender;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 7: Inner join</h2>
+  <pre>
+<code>SELECT
+    u.name,
+    a.city
+FROM users u
+INNER JOIN addresses a
+    ON u.id = a.user_id;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 8: Upsert style insert</h2>
+  <pre>
+<code>INSERT INTO users (id, name)
+VALUES (1, "Ali")
+ON DUPLICATE KEY UPDATE
+    name = VALUES(name);</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 9: Safe transaction</h2>
+  <pre>
+<code>START TRANSACTION;
+UPDATE users SET salary = salary + 1000 WHERE id = 2;
+COMMIT;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 10: Index for search</h2>
+  <pre>
+<code>CREATE INDEX idx_email
+ON users(email);</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 11: Select specific columns</h2>
+  <pre>
+<code>SELECT
+    id,
+    name
+FROM users;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 12: Filter with WHERE</h2>
+  <pre>
+<code>SELECT *
+FROM users
+WHERE salary &gt; 50000;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 13: Sort results</h2>
+  <pre>
+<code>SELECT *
+FROM users
+ORDER BY created_at DESC;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 14: Paginate rows</h2>
+  <pre>
+<code>SELECT *
+FROM users
+LIMIT 20 OFFSET 40;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 15: Aggregate counts</h2>
+  <pre>
+<code>SELECT
+    COUNT(*) AS total_users
+FROM users;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 16: Group and summarize</h2>
+  <pre>
+<code>SELECT
+    gender,
+    AVG(salary)
+FROM users
+GROUP BY gender;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 17: Inner join</h2>
+  <pre>
+<code>SELECT
+    u.name,
+    a.city
+FROM users u
+INNER JOIN addresses a
+    ON u.id = a.user_id;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 18: Upsert style insert</h2>
+  <pre>
+<code>INSERT INTO users (id, name)
+VALUES (1, "Ali")
+ON DUPLICATE KEY UPDATE
+    name = VALUES(name);</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 19: Safe transaction</h2>
+  <pre>
+<code>START TRANSACTION;
+UPDATE users SET salary = salary + 1000 WHERE id = 2;
+COMMIT;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 20: Index for search</h2>
+  <pre>
+<code>CREATE INDEX idx_email
+ON users(email);</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 21: Select specific columns</h2>
+  <pre>
+<code>SELECT
+    id,
+    name
+FROM users;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 22: Filter with WHERE</h2>
+  <pre>
+<code>SELECT *
+FROM users
+WHERE salary &gt; 50000;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 23: Sort results</h2>
+  <pre>
+<code>SELECT *
+FROM users
+ORDER BY created_at DESC;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 24: Paginate rows</h2>
+  <pre>
+<code>SELECT *
+FROM users
+LIMIT 20 OFFSET 40;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 25: Aggregate counts</h2>
+  <pre>
+<code>SELECT
+    COUNT(*) AS total_users
+FROM users;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 26: Group and summarize</h2>
+  <pre>
+<code>SELECT
+    gender,
+    AVG(salary)
+FROM users
+GROUP BY gender;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 27: Inner join</h2>
+  <pre>
+<code>SELECT
+    u.name,
+    a.city
+FROM users u
+INNER JOIN addresses a
+    ON u.id = a.user_id;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 28: Upsert style insert</h2>
+  <pre>
+<code>INSERT INTO users (id, name)
+VALUES (1, "Ali")
+ON DUPLICATE KEY UPDATE
+    name = VALUES(name);</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 29: Safe transaction</h2>
+  <pre>
+<code>START TRANSACTION;
+UPDATE users SET salary = salary + 1000 WHERE id = 2;
+COMMIT;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 30: Index for search</h2>
+  <pre>
+<code>CREATE INDEX idx_email
+ON users(email);</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 31: Select specific columns</h2>
+  <pre>
+<code>SELECT
+    id,
+    name
+FROM users;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 32: Filter with WHERE</h2>
+  <pre>
+<code>SELECT *
+FROM users
+WHERE salary &gt; 50000;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 33: Sort results</h2>
+  <pre>
+<code>SELECT *
+FROM users
+ORDER BY created_at DESC;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 34: Paginate rows</h2>
+  <pre>
+<code>SELECT *
+FROM users
+LIMIT 20 OFFSET 40;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 35: Aggregate counts</h2>
+  <pre>
+<code>SELECT
+    COUNT(*) AS total_users
+FROM users;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 36: Group and summarize</h2>
+  <pre>
+<code>SELECT
+    gender,
+    AVG(salary)
+FROM users
+GROUP BY gender;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 37: Inner join</h2>
+  <pre>
+<code>SELECT
+    u.name,
+    a.city
+FROM users u
+INNER JOIN addresses a
+    ON u.id = a.user_id;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 38: Upsert style insert</h2>
+  <pre>
+<code>INSERT INTO users (id, name)
+VALUES (1, "Ali")
+ON DUPLICATE KEY UPDATE
+    name = VALUES(name);</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 39: Safe transaction</h2>
+  <pre>
+<code>START TRANSACTION;
+UPDATE users SET salary = salary + 1000 WHERE id = 2;
+COMMIT;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 40: Index for search</h2>
+  <pre>
+<code>CREATE INDEX idx_email
+ON users(email);</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 41: Select specific columns</h2>
+  <pre>
+<code>SELECT
+    id,
+    name
+FROM users;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 42: Filter with WHERE</h2>
+  <pre>
+<code>SELECT *
+FROM users
+WHERE salary &gt; 50000;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 43: Sort results</h2>
+  <pre>
+<code>SELECT *
+FROM users
+ORDER BY created_at DESC;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 44: Paginate rows</h2>
+  <pre>
+<code>SELECT *
+FROM users
+LIMIT 20 OFFSET 40;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 45: Aggregate counts</h2>
+  <pre>
+<code>SELECT
+    COUNT(*) AS total_users
+FROM users;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 46: Group and summarize</h2>
+  <pre>
+<code>SELECT
+    gender,
+    AVG(salary)
+FROM users
+GROUP BY gender;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 47: Inner join</h2>
+  <pre>
+<code>SELECT
+    u.name,
+    a.city
+FROM users u
+INNER JOIN addresses a
+    ON u.id = a.user_id;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 48: Upsert style insert</h2>
+  <pre>
+<code>INSERT INTO users (id, name)
+VALUES (1, "Ali")
+ON DUPLICATE KEY UPDATE
+    name = VALUES(name);</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 49: Safe transaction</h2>
+  <pre>
+<code>START TRANSACTION;
+UPDATE users SET salary = salary + 1000 WHERE id = 2;
+COMMIT;</code>
+</pre>
+</div>
+<div class="article-card reveal">
+  <h2>Hack 50: Index for search</h2>
+  <pre>
+<code>CREATE INDEX idx_email
+ON users(email);</code>
+</pre>
+</div>
+</section>
+</main>
+<footer>
+<div class="container footer-wrap">
+<div>
+<a class="brand footer-brand" href="index.html">
+<span class="brand-badge">&lt;HS/&gt;</span>
+<span class="brand-name">Hotak Script</span>
+</a>
+<p class="footer-note">Practical coding education designed for fast growth and real outcomes.</p>
+</div>
+<div class="footer-links">
+<h5>Main</h5>
+<a href="index.html">Home</a>
+<a href="courses.html">Courses</a>
+<a href="tutorials.html">Tutorials</a>
+</div>
+<div class="footer-links">
+<h5>Resources</h5>
+<a href="blogs.html">Blogs</a>
+<a href="videos.html">Videos</a>
+<a href="sourcecode.html">Source Code</a>
+</div>
+<div class="footer-links">
+<h5>Social</h5>
+<a href="https://www.youtube.com/@Hotak-Script" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-youtube">
+</i> YouTube</a>
+<a href="https://www.facebook.com/share/184jUq7SFJ/" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-facebook">
+</i> Facebook</a>
+<a href="https://t.me/Hotak_Script" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-telegram">
+</i> Telegram</a>
+</div>
+</div>
+<div class="container lower">
+<p class="copy">&copy; <span id="yearNow">2026</span> Hotak Script. All rights reserved.</p>
+</div>
+</footer>
+<script src="assets/js/index.js">
+</script>
+<script src="assets/js/page.js">
+</script>
+</body>
+</html>
+
+
+

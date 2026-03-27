@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ultimate SQL Tutorial | Hotak Script</title>
+<meta name="description" content="A complete SQL and MySQL tutorial from installation to joins, transactions, views, procedures and triggers.">
+<link rel="stylesheet" href="assets/css/index.css">
+<link rel="stylesheet" href="assets/css/blog-post.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="bg-decoration bg-one" aria-hidden="true"></div>
+<div class="bg-decoration bg-two" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a class="brand" href="index.html"><span class="brand-badge">&lt;HS/&gt;</span><span class="brand-name">Hotak Script</span></a>
+    <nav class="navigation" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="tutorials.html">Tutorials</a></li>
+        <li><a class="active" href="blogs.html">Blogs</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="sourcecode.html">Source Code</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main class="section-pad">
+  <section class="container inner-hero reveal">
+    <h1>The Ultimate SQL Tutorial</h1>
+    <p>"MySQL is a database management system. A Database Management System (DBMS) is software that interacts with end users, applications, and the database itself to capture and analyze data."</p>
+    <div class="pill-row">
+      <span class="pill">By CodeWithHarry</span>
+      <span class="pill">Updated: July 13, 2025</span>
+      <span class="pill">MySQL + SQL Complete</span>
+    </div>
+  </section>
+
+  <section class="container section-pad article-list">
+    <article class="article-card reveal">
+      <h2>Installing MySQL</h2>
+      <p><strong>What is MySQL Workbench?</strong> A visual tool for DB architects, developers, and DBAs with data modeling, SQL development, and admin tools.</p>
+      <p><strong>Windows/macOS:</strong> Download installer from `https://dev.mysql.com/downloads/installer/`, choose Developer Default, set root password, and install Workbench.</p>
+      <p><strong>Ubuntu Linux:</strong></p>
+      <pre><code>sudo apt update
+sudo apt install mysql-server
+sudo mysql_secure_installation
+
+sudo mysql
+CREATE USER 'harry'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'harry'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EXIT;
+
+mysql -u harry -p</code></pre>
+    </article>
+
+    <article class="article-card reveal">
+      <h2>Getting Started</h2>
+      <p>A database stores related data in an organized way. In MySQL, one database contains one or more tables.</p>
+      <pre><code>CREATE DATABASE startersql;
+USE startersql;
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  gender ENUM('Male', 'Female', 'Other'),
+  date_of_birth DATE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);</code></pre>
+      <p>Delete everything in DB:</p>
+      <pre><code>DROP DATABASE startersql;</code></pre>
+    </article>
+
+    <article class="article-card reveal">
+      <h2>Working with Tables</h2>
+      <pre><code>SELECT * FROM users;
+SELECT name, email FROM users;
+
+RENAME TABLE users TO customers;
+RENAME TABLE customers TO users;
+
+ALTER TABLE users ADD COLUMN is_active BOOLEAN DEFAULT TRUE;
+ALTER TABLE users DROP COLUMN is_active;
+ALTER TABLE users MODIFY COLUMN name VARCHAR(150);
+ALTER TABLE users MODIFY COLUMN email VARCHAR(100) FIRST;</code></pre>
+    </article>
+
+    <article class="article-card reveal">
+      <h2>Insert and Query Data</h2>
+      <pre><code>INSERT INTO users (name, email, gender, date_of_birth) VALUES
+('Bob', 'bob@example.com', 'Male', '1990-11-23'),
+('Charlie', 'charlie@example.com', 'Other', '1988-02-17');
+
+SELECT * FROM users WHERE gender = 'Male';
+SELECT * FROM users WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31';
+SELECT * FROM users WHERE name LIKE 'A%';
+SELECT * FROM users ORDER BY created_at DESC LIMIT 10;</code></pre>
+    </article>
+
+    <article class="article-card reveal">
+      <h2>UPDATE and DELETE</h2>
+      <pre><code>UPDATE users
+SET name = 'Alicia'
+WHERE id = 1;
+
+UPDATE users
+SET salary = salary + 10000
+WHERE salary &lt; 60000;
+
+DELETE FROM users WHERE id = 3;
+DELETE FROM users WHERE salary IS NULL;
+DROP TABLE users;</code></pre>
+      <p>Tip: Always run matching SELECT before update/delete on production data.</p>
+    </article>
+
+    <article class="article-card reveal">
+      <h2>Constraints</h2>
+      <pre><code>-- UNIQUE
+ALTER TABLE users ADD CONSTRAINT unique_email UNIQUE (email);
+
+-- NOT NULL
+ALTER TABLE users MODIFY COLUMN name VARCHAR(100) NOT NULL;
+
+-- CHECK
+ALTER TABLE users
+ADD CONSTRAINT chk_dob CHECK (date_of_birth &gt; '2000-01-01');
+
+-- DEFAULT
+ALTER TABLE users ALTER COLUMN is_active SET DEFAULT TRUE;
+
+-- PRIMARY KEY + AUTO_INCREMENT
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100)
+);</code></pre>
+    </article>
+
+    <article class="article-card reveal">
+      <h2>Functions</h2>
+      <pre><code>SELECT COUNT(*) FROM users;
+SELECT MIN(salary), MAX(salary) FROM users;
+SELECT AVG(salary) FROM users;
+SELECT gender, AVG(salary) FROM users GROUP BY gender;
+
+SELECT name, LENGTH(name) FROM users;
+SELECT CONCAT(name, ' &lt;', email, '&gt;') FROM users;
+
+SELECT NOW();
+SELECT name, TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) AS age FROM users;
+
+SELECT name, IF(gender='Female','Yes','No') AS is_female FROM users;</code></pre>
+    </article>
+
+    <article class="article-card reveal">
+      <h2>Transactions and AutoCommit</h2>
+      <pre><code>SET autocommit = 0;
+UPDATE users SET salary = 80000 WHERE id = 5;
+COMMIT;
+-- or
+ROLLBACK;
+SET autocommit = 1;</code></pre>
+    </article>
+
+    <article class="article-card reveal">
+      <h2>Foreign Keys and JOINs</h2>
+      <pre><code>CREATE TABLE addresses (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
+  city VARCHAR(100),
+  CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+SELECT u.name, a.city
+FROM users u
+INNER JOIN addresses a ON u.id = a.user_id;
+
+SELECT u.name, a.city
+FROM users u
+LEFT JOIN addresses a ON u.id = a.user_id;</code></pre>
+    </article>
+
+    <article class="article-card reveal">
+      <h2>UNION, Views, Indexes, Subqueries</h2>
+      <pre><code>SELECT name FROM users
+UNION
+SELECT name FROM admin_users;
+
+CREATE VIEW high_salary_users AS
+SELECT id, name, salary FROM users WHERE salary &gt; 70000;
+
+CREATE INDEX idx_email ON users(email);
+CREATE INDEX idx_gender_salary ON users(gender, salary);
+
+SELECT id, name, salary
+FROM users
+WHERE salary &gt; (SELECT AVG(salary) FROM users);</code></pre>
+    </article>
+
+    <article class="article-card reveal">
+      <h2>GROUP BY, HAVING, Procedures, Triggers</h2>
+      <pre><code>SELECT gender, AVG(salary) AS avg_salary
+FROM users
+GROUP BY gender
+HAVING AVG(salary) &gt; 75000;
+
+DELIMITER $$
+CREATE PROCEDURE AddUser(
+  IN p_name VARCHAR(100),
+  IN p_email VARCHAR(100),
+  IN p_gender ENUM('Male','Female','Other'),
+  IN p_dob DATE,
+  IN p_salary INT
+)
+BEGIN
+  INSERT INTO users(name,email,gender,date_of_birth,salary)
+  VALUES(p_name,p_email,p_gender,p_dob,p_salary);
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER after_user_insert
+AFTER INSERT ON users
+FOR EACH ROW
+BEGIN
+  INSERT INTO user_log(user_id,name) VALUES(NEW.id, NEW.name);
+END$$
+DELIMITER ;</code></pre>
+    </article>
+
+    <article class="article-card reveal">
+      <h2>Conclusion</h2>
+      <p>This tutorial covers the practical SQL path: setup, CRUD, constraints, joins, transactions, views, indexing, stored procedures, and triggers. Practice each section with your own `users` table to build command confidence.</p>
+      <p><strong>Tags:</strong> mysql, mysql tutorial, tutorial mysql, learn mysql</p>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-wrap">
+    <div><a class="brand footer-brand" href="index.html"><span class="brand-badge">&lt;HS/&gt;</span><span class="brand-name">Hotak Script</span></a><p class="footer-note">Practical coding education designed for fast growth and real outcomes.</p></div>
+    <div class="footer-links"><h5>Main</h5><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="tutorials.html">Tutorials</a></div>
+    <div class="footer-links"><h5>Resources</h5><a href="blogs.html">Blogs</a><a href="videos.html">Videos</a><a href="sourcecode.html">Source Code</a></div>
+    <div class="footer-links"><h5>Social</h5><a href="https://www.youtube.com/@Hotak-Script" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i> YouTube</a><a href="https://www.facebook.com/share/184jUq7SFJ/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i> Facebook</a><a href="https://t.me/Hotak_Script" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i> Telegram</a></div>
+  </div>
+  <div class="container lower"><p class="copy">&copy; <span id="yearNow">2026</span> Hotak Script. All rights reserved.</p></div>
+</footer>
+
+<script src="assets/js/index.js"></script>
+<script src="assets/js/page.js"></script>
+</body>
+</html>
