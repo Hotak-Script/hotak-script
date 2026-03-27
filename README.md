@@ -1,8 +1,26 @@
-<h1 align="center">Hi, I'm Hotak</h1>
-<h3 align="center">Full Stack Developer | Building Modern Web & Desktop Applications</h3>
+<h1 align="center">Hi, I'm Hotak 👋</h1>
 
 <p align="center">
-  Passionate about creating scalable, user-friendly, and real-world software solutions.
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=38BDF8&center=true&vCenter=true&width=900&lines=Full+Stack+Developer;Building+Modern+Web+%26+Desktop+Applications;Frontend+%2B+Backend+%2B+Database;Always+Learning+and+Building" alt="Typing SVG" />
+</p>
+
+<h3 align="center">Full Stack Developer | Web + Desktop Applications | Real-World Software Builder</h3>
+
+<p align="center">
+  Passionate about creating scalable, user-friendly, and practical software solutions.
+</p>
+
+<p align="center">
+  <a href="mailto:ikramk654321@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a href="https://github.com/Hotak-Script">
+    <img src="https://img.shields.io/badge/GitHub-111111?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=Hotak-Script&label=Profile%20Views&color=0e75b6&style=for-the-badge" alt="profile views" />
 </p>
 
 ---
@@ -19,36 +37,46 @@ My focus is on writing clean code, building practical products, and continuously
 ## Tech Stack
 
 ### Frontend
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-0F172A?style=for-the-badge&logo=tailwind-css&logoColor=38BDF8)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-4B1F6F?style=for-the-badge&logo=bootstrap&logoColor=white)
+<p>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-0F172A?style=for-the-badge&logo=tailwind-css&logoColor=38BDF8" />
+  <img src="https://img.shields.io/badge/Bootstrap-4B1F6F?style=for-the-badge&logo=bootstrap&logoColor=white" />
+</p>
 
 ### Backend
-![Node.js](https://img.shields.io/badge/Node.js-1B4332?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-222222?style=for-the-badge&logo=express&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-512BD4?style=for-the-badge&logo=c-sharp&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET-2F2F8F?style=for-the-badge&logo=dotnet&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-4F5B93?style=for-the-badge&logo=php&logoColor=white)
+<p>
+  <img src="https://img.shields.io/badge/Node.js-1B4332?style=for-the-badge&logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/Express.js-222222?style=for-the-badge&logo=express&logoColor=white" />
+  <img src="https://img.shields.io/badge/C%23-512BD4?style=for-the-badge&logo=c-sharp&logoColor=white" />
+  <img src="https://img.shields.io/badge/.NET-2F2F8F?style=for-the-badge&logo=dotnet&logoColor=white" />
+  <img src="https://img.shields.io/badge/PHP-4F5B93?style=for-the-badge&logo=php&logoColor=white" />
+</p>
 
 ### Database
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-0B5C7A?style=for-the-badge&logo=mysql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-1F6F43?style=for-the-badge&logo=mongodb&logoColor=white)
+<p>
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
+  <img src="https://img.shields.io/badge/MySQL-0B5C7A?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/MongoDB-1F6F43?style=for-the-badge&logo=mongodb&logoColor=white" />
+</p>
 
 ### Desktop Development
-![WPF](https://img.shields.io/badge/WPF-5C2D91?style=for-the-badge&logo=windows&logoColor=white)
-![MVVM](https://img.shields.io/badge/MVVM-7A3E00?style=for-the-badge&logo=windows-terminal&logoColor=white)
-![Windows Apps](https://img.shields.io/badge/Windows_Apps-005A9C?style=for-the-badge&logo=windows&logoColor=white)
+<p>
+  <img src="https://img.shields.io/badge/WPF-5C2D91?style=for-the-badge&logo=windows&logoColor=white" />
+  <img src="https://img.shields.io/badge/MVVM-7A3E00?style=for-the-badge&logo=windows-terminal&logoColor=white" />
+  <img src="https://img.shields.io/badge/Windows_Apps-005A9C?style=for-the-badge&logo=windows&logoColor=white" />
+</p>
 
 ### Tools & Platforms
-![Git](https://img.shields.io/badge/Git-BB2F00?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-111111?style=for-the-badge&logo=github&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-005A9C?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Visual Studio](https://img.shields.io/badge/Visual_Studio-68217A?style=for-the-badge&logo=visual-studio&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-8A2C0A?style=for-the-badge&logo=postman&logoColor=white)
+<p>
+  <img src="https://img.shields.io/badge/Git-BB2F00?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-111111?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/VS_Code-005A9C?style=for-the-badge&logo=visual-studio-code&logoColor=white" />
+  <img src="https://img.shields.io/badge/Visual_Studio-68217A?style=for-the-badge&logo=visual-studio&logoColor=white" />
+  <img src="https://img.shields.io/badge/Postman-8A2C0A?style=for-the-badge&logo=postman&logoColor=white" />
+</p>
 
 ---
 
@@ -63,16 +91,16 @@ My focus is on writing clean code, building practical products, and continuously
 ---
 
 ## Featured Projects
-- Record App  
+- `Record App`  
   A professional desktop management system built with C#, WPF, and SQLite.
 
-- Portfolio Website  
+- `Portfolio Website`  
   A modern responsive web project for personal branding.
 
-- Management Systems  
+- `Management Systems`  
   Projects focused on records, payments, dashboards, reports, and search.
 
-- Full Stack Apps  
+- `Full Stack Apps`  
   Applications with frontend, backend, and database integration.
 
 ---
@@ -108,6 +136,7 @@ My focus is on writing clean code, building practical products, and continuously
 ---
 
 ## Contact
+- Email: [ikramk654321@gmail.com](mailto:ikramk654321@gmail.com)
 - GitHub: [Hotak-Script](https://github.com/Hotak-Script)
 
 ---
