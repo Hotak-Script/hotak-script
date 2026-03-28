@@ -5,7 +5,6 @@
 <h1 align="center">Hi, I'm Hotak 👋</h1>
 <h3 align="center">Full Stack Developer | Web + Desktop Applications | Real-World Software Builder</h3>
 
-<h1 align="center">Hi, I'm Hotak</h1>
 <h3 align="center">Full Stack Developer | Building Modern Web & Desktop Applications</h3>
 
 <p align="center">
