@@ -7,9 +7,14 @@ document.body.classList.add("is-loading");
 const siteLoader = document.createElement("div");
 siteLoader.className = "site-loader";
 siteLoader.innerHTML = `
-  <div>
-    <div class="loader-core" aria-hidden="true"></div>
-    <p class="loader-text">Hotak Script Loading</p>
+  <div class="loader-shell" role="status" aria-live="polite" aria-label="SSL page loading">
+    <div class="loader-mark" aria-hidden="true">
+      <span class="loader-ring loader-ring-one"></span>
+      <span class="loader-ring loader-ring-two"></span>
+      <span class="loader-center">SSL</span>
+    </div>
+    <p class="loader-text">SSL</p>
+    <p class="loader-subtext">Preparing secure content...</p>
   </div>
 `;
 document.body.appendChild(siteLoader);

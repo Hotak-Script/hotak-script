@@ -132,22 +132,42 @@ a {
   display: flex;
   align-items: center;
   gap: 0.7rem;
+  min-width: 0;
 }
 
 .brand-badge {
-  padding: 0.45rem 0.7rem;
+  width: clamp(48px, 8vw, 62px);
+  height: clamp(48px, 8vw, 62px);
+  padding: 0.2rem;
   border-radius: 0.65rem;
   background: linear-gradient(120deg, var(--highlight), #56d7ff);
   color: #041225;
   font-family: "Sora", sans-serif;
   font-size: 0.85rem;
   font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  overflow: hidden;
 }
+
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  display: block;
+}
+
 
 .brand-name {
   font-family: "Sora", sans-serif;
+  font-size: clamp(0.92rem, 1.2vw, 1.05rem);
   letter-spacing: 0.02em;
   font-weight: 700;
+  line-height: 1.1;
+  word-break: break-word;
 }
 
 .navigation ul {
@@ -194,12 +214,20 @@ a {
   z-index: 9999;
   display: grid;
   place-items: center;
-  background: radial-gradient(circle at 20% 20%, rgba(100, 168, 255, 0.16), rgba(8, 18, 38, 0.98) 56%), var(--bg-main);
+  padding: 1.25rem;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(29, 211, 176, 0.16), transparent 24%),
+    radial-gradient(circle at 50% 65%, rgba(100, 168, 255, 0.18), transparent 28%),
+    rgba(8, 18, 38, 0.94);
+  backdrop-filter: blur(14px);
   transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
 :root[data-theme="light"] .site-loader {
-  background: radial-gradient(circle at 20% 20%, rgba(47, 125, 218, 0.18), rgba(243, 248, 255, 0.97) 58%), var(--bg-main);
+  background:
+    radial-gradient(circle at 50% 35%, rgba(4, 161, 132, 0.14), transparent 24%),
+    radial-gradient(circle at 50% 65%, rgba(47, 125, 218, 0.14), transparent 28%),
+    rgba(244, 248, 255, 0.92);
 }
 
 .site-loader.is-hidden {
@@ -208,35 +236,95 @@ a {
   pointer-events: none;
 }
 
-.loader-core {
-  width: 92px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: 4px solid rgba(116, 192, 255, 0.2);
-  border-top-color: #6fc2ff;
-  border-right-color: #1dd3b0;
-  animation: spinLoader 0.8s linear infinite;
-  position: relative;
-  box-shadow: 0 0 0 12px rgba(116, 192, 255, 0.06);
+.loader-shell {
+  width: min(100%, 320px);
+  min-height: 280px;
+  display: grid;
+  place-items: center;
+  gap: 0.7rem;
+  padding: 1.6rem 1.4rem;
+  text-align: center;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(153, 191, 255, 0.22);
+  background: linear-gradient(160deg, rgba(12, 30, 56, 0.88), rgba(8, 18, 38, 0.72));
+  box-shadow: 0 24px 70px rgba(4, 11, 24, 0.45);
 }
 
-.loader-core::after {
-  content: "";
+:root[data-theme="light"] .loader-shell {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.94), rgba(231, 241, 255, 0.86));
+  box-shadow: 0 22px 55px rgba(27, 52, 89, 0.16);
+}
+
+.loader-mark {
+  position: relative;
+  width: clamp(110px, 28vw, 148px);
+  height: clamp(110px, 28vw, 148px);
+  display: grid;
+  place-items: center;
+}
+
+.loader-ring {
   position: absolute;
-  inset: 12px;
+  inset: 0;
   border-radius: 50%;
-  border: 3px dashed rgba(255, 122, 89, 0.55);
-  animation: spinLoaderReverse 1.2s linear infinite;
+  border: 2px solid transparent;
+}
+
+.loader-ring-one {
+  border-top-color: #6fc2ff;
+  border-right-color: rgba(29, 211, 176, 0.95);
+  animation: spinLoader 1.1s linear infinite;
+  box-shadow: 0 0 0 10px rgba(116, 192, 255, 0.08);
+}
+
+.loader-ring-two {
+  inset: 14px;
+  border-left-color: rgba(255, 122, 89, 0.92);
+  border-bottom-color: rgba(100, 168, 255, 0.92);
+  animation: spinLoaderReverse 1.6s linear infinite;
+}
+
+.loader-center {
+  width: clamp(58px, 16vw, 74px);
+  height: clamp(58px, 16vw, 74px);
+  display: grid;
+  place-items: center;
+  border-radius: 1.05rem;
+  background: linear-gradient(135deg, var(--primary), #73d6ff);
+  color: #041225;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  box-shadow: 0 12px 28px rgba(29, 211, 176, 0.26);
 }
 
 .loader-text {
-  margin-top: 1rem;
   text-align: center;
   font-family: "Sora", sans-serif;
-  font-size: 0.86rem;
-  letter-spacing: 0.08em;
-  color: var(--text-soft);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  letter-spacing: 0.2em;
+  color: var(--text-main);
   text-transform: uppercase;
+  font-weight: 800;
+}
+
+.loader-subtext {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 620px) {
+  .loader-shell {
+    min-height: 240px;
+    padding: 1.25rem 1rem;
+    border-radius: 1.25rem;
+  }
+
+  .loader-subtext {
+    font-size: 0.84rem;
+  }
 }
 
 .hamburger {
@@ -394,30 +482,41 @@ a {
   margin-top: 1.2rem;
   display: flex;
   align-items: center;
-  gap: 0.9rem;
-  padding: 0.85rem;
-  border-radius: 0.85rem;
+  flex-wrap: wrap;
+  gap: 1.15rem;
+  padding: 1rem 1.15rem;
+  border-radius: 1.15rem;
   border: 1px solid var(--line);
-  background: var(--surface-2);
-  box-shadow: var(--shadow);
+  background: linear-gradient(135deg, rgba(18, 48, 97, 0.82), rgba(10, 24, 47, 0.94));
+  box-shadow: 0 18px 40px rgba(4, 11, 24, 0.28);
+  max-width: min(100%, 560px);
 }
 
 .founder-card img {
-  width: 62px;
-  height: 62px;
+  width: clamp(96px, 16vw, 132px);
+  height: clamp(96px, 16vw, 132px);
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #8bc5ff;
+  border: 4px solid rgba(139, 197, 255, 0.95);
+  flex: 0 0 auto;
+  box-shadow: 0 12px 30px rgba(5, 11, 25, 0.32);
+}
+
+.founder-card > div {
+  min-width: 0;
+  flex: 1 1 260px;
 }
 
 .founder-card h4 {
   font-family: "Sora", sans-serif;
-  font-size: 1rem;
+  font-size: clamp(1.08rem, 2.4vw, 1.35rem);
+  margin-bottom: 0.35rem;
 }
 
 .founder-card p {
   color: var(--text-soft);
-  font-size: 0.9rem;
+  font-size: 0.98rem;
+  line-height: 1.65;
 }
 
 .section-head {
@@ -748,6 +847,19 @@ footer {
     padding: 3rem 0;
   }
 
+  .topbar {
+    min-height: 72px;
+  }
+
+  .brand {
+    gap: 0.55rem;
+    max-width: calc(100% - 68px);
+  }
+
+  .brand-name {
+    font-size: 0.88rem;
+  }
+
   .quick-stats {
     grid-template-columns: 1fr;
   }
@@ -758,6 +870,25 @@ footer {
 
   .btn {
     width: 100%;
+  }
+
+  .founder-card {
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 0.95rem;
+  }
+
+  .founder-card img {
+    width: 92px;
+    height: 92px;
+  }
+
+  .founder-card > div {
+    flex-basis: 100%;
+  }
+
+  .founder-card h4 {
+    font-size: 1.05rem;
   }
 }
 
